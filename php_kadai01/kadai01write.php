@@ -7,12 +7,12 @@ $memo = $_POST["memo"];
 $c = ",";
 
 //文字作成
-$str = date("Y-m-d H:i:s");
+$str = date("Y-m-d H:i:s"); //Y・H・大文字
 $str .= $c.$name.$c.$condition.$c.$temperature.$c.$sleeping.$c.$memo;//←表示について
 
 //File書き込み
 $file = fopen("kadai01data.txt","a");	// ファイル読み込み
-fwrite($file, $str."\n");//""に入れること
+fwrite($file, $str."\n");//バックスラッシュは""に入れること
 fclose($file);
 ?>
 
@@ -29,7 +29,7 @@ fclose($file);
 <div><?=$str?></div>
     
 <?php 
-    header("Location: kadai01read.php ");
+    header("Location: kadai01read.php "); //★readページへ飛ばす呪文
 ?>
 
 <ul>
